@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FC } from "react";
+import { Navbar } from "../ui";
 
 interface MainLayoutProps {
     children: JSX.Element,
@@ -16,6 +17,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children, title, author, descr
                 <meta name="author" content={ author } />
                 <meta name="description" content={ description } />
             </Head>
+            <Navbar />
             {
                 children
             }

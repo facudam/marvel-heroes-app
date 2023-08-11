@@ -11,8 +11,6 @@ html {
   color: #fff;
 }
 
-h1 {
-  text-align: center;
-  margin: 25px;
-  text-shadow: 1px 1px 1px #000;
+body {
+  padding: 10px;
 }
