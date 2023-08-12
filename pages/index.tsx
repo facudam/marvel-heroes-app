@@ -14,6 +14,9 @@ export default function Home() {
         description="The Marvel heroes app: get all your heroes info of marvel's universe">
         <>
           <h1>New application</h1>
+          <section>
+            
+          </section>
         </>
       </MainLayout>
       {/* <main className={`${styles.main} ${inter.className}`}>

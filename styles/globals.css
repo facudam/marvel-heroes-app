@@ -6,11 +6,7 @@
 
 html {
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../public/marvel.webp') no-repeat center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../public/marvel.webp') no-repeat right fixed;
   background-size: cover;
   color: #fff;
-}
-
-body {
-  padding: 10px;
 }

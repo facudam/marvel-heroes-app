@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Benton;
+    src: url('../fonts/bentonsans.ttf');
+    font-display: swap;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(32, 32, 32);
+    padding: 15px;
+}
+
+.link {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+.logo {
+    text-transform: uppercase;
+    background-color: rgb(236,29,36);
+    padding: 0 1px;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: Benton, sans-serif;
+    
+}
