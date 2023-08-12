@@ -13,6 +13,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children, title, author, descr
     return(
         <>
             <Head>
+                <link rel="icon" href="./ironman.png" />
                 <title>{ title }</title>
                 <meta name="author" content={ author } />
                 <meta name="description" content={ description } />

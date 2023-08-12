@@ -1,8 +1,9 @@
+import { FC } from 'react'
 import Link from "next/link"
 import styles from '@/styles/Navbar.module.css'
-import Image from "next/image"
 
-export const Navbar = () => {
+
+export const Navbar: FC = () => {
     return(
         <nav className={ styles.nav }>
             <ul className={ styles.navCntPrimary }>

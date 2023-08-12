@@ -1,27 +1,22 @@
-
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import { MainLayout } from '@/components/layouts'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Header } from '@/components/ui'
+import styles from '@/styles/Home.module.css'
 
 export default function Home() {
   return (
     <>
       <MainLayout 
-        title='The marvel heroes application' 
+        title='The non-official marvel heroes application' 
         author='Facundo Cáceres' 
         description="The Marvel heroes app: get all your heroes info of marvel's universe">
         <>
-          <h1>New application</h1>
-          <section>
-            
+          <section className={`${styles.home}`}>
+            <Header />
+            <main className={`${styles.main}`}></main>
           </section>
         </>
       </MainLayout>
-      {/* <main className={`${styles.main} ${inter.className}`}>
-        <h1>Marvel Heroes APP</h1>
-      </main> */}
     </>
   )
 }

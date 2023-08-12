@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header h1 {
+    font-family: robotoBold, sans-serif;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.header p {
+    font-family: roboto, sansSerif;
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 720px) {
+    .header h1 {
+        font-size: 4rem;
+    }
+    .header p {
+        font-size: 1.4rem;
+    }
+}
