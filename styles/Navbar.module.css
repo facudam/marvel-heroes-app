@@ -1,16 +1,31 @@
-@font-face {
-    font-family: Benton;
-    src: url('../fonts/bentonsans.ttf');
-    font-display: swap;
-}
+
 
 .nav {
+    font-family: robotoCondensedBold, sans-serif;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-marvel);
+    padding: 0 15px;
+}
+
+.navCntPrimary {
+    width: 100%;
+    max-width: var(--max-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(32, 32, 32);
-    padding: 15px;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.navCntSecondary {
+    justify-content: center;
+    gap: 45px;
+    padding: 12px 0 14px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .link {
@@ -18,12 +33,11 @@
     color: #fefefe;
 }
 
-.logo {
-    text-transform: uppercase;
+.logo  {
+    font-family: bentonSans, sans-serif;
     background-color: rgb(236,29,36);
-    padding: 0 1px;
-    font-size: 2rem;
-    font-weight: 900;
-    font-family: Benton, sans-serif;
-    
+    font-size: 3.2rem;
+    letter-spacing: -4px;
+    padding: 0 6px 0 0;
+    line-height: .9;
 }

@@ -4,9 +4,41 @@
   margin: 0;
 }
 
+:root {
+  --max-width: 1180px;
+  --gray-marvel: rgba(32, 32, 32);
+}
+
 html {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../public/marvel.webp') no-repeat right fixed;
   background-size: cover;
   color: #fff;
+}
+
+@font-face {
+  font-family: bentonSans;
+  src: url('../fonts/bentonsans.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url('../fonts/Roboto-Light.ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: robotoBold;
+  src: url('../fonts/Roboto-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: robotoCondensedBold;
+  src: url('../fonts/RobotoCondensed-Bold.ttf');
+  font-display: swap;
+}
+
+body {
+  font-family: roboto, sans-serif;
 }
