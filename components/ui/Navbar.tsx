@@ -5,16 +5,28 @@ import Image from "next/image"
 export const Navbar = () => {
     return(
         <nav className={ styles.nav }>
-            <div className={ styles.navCntPrimary }>
-                <Link className={`${styles.link}`} href=''>listas</Link>
-                <Link className={`${styles.link} ${styles.logo}`} href=''>marvel heroes app</Link>
-                <Link className={`${styles.link}`} href=''>Favourites</Link>
-            </div>
-            <div className={ `${styles.navCntPrimary} ${styles.navCntSecondary}` }>
-                <Link className={`${styles.link}`} href=''>comics</Link>
-                <Link className={`${styles.link}`} href=''>characters</Link>
-                <Link className={`${styles.link}`} href=''>more</Link>
-            </div>
+            <ul className={ styles.navCntPrimary }>
+                <li>
+                    <Link className={`${styles.link} ${styles.linkPrincipal}`} href=''>listas</Link>
+                </li>
+                <li>
+                    <Link className={`${styles.link} ${styles.logo}`} href=''>marvel heroes app</Link>
+                </li>
+                <li>
+                    <Link className={`${styles.link} ${styles.linkPrincipal}`} href=''>Favourites</Link>
+                </li>
+            </ul>
+            <ul className={ `${styles.navCntPrimary} ${styles.navCntSecondary}` }>
+                <li>
+                    <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>comics</Link>
+                </li>
+                <li>
+                    <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>characters</Link>
+                </li>
+                <li>
+                    <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>more</Link>
+                </li>
+            </ul>
         </nav>
     )
 }
