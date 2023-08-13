@@ -42,6 +42,11 @@
     border-left: 1px solid rgba(255,255,255,.1);
     border-right: 1px solid rgba(255,255,255,.1);
     padding: 7px 15px;
+    transition: color .5s ease;
+}
+
+.linkPrincipal:hover {
+    color: rgb(236,29,36);
 }
 
 .linkSecondary {
@@ -85,7 +90,7 @@
         height: 40px;
     }
     .logo  {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
         padding: 0 6px 0 0;
         line-height: .9;
     }

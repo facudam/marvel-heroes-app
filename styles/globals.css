@@ -6,12 +6,12 @@
 
 :root {
   --max-width: 1180px;
-  --black-marvel: rgba(0, 0, 0, .5);
+  --black-marvel: rgba(0, 0, 0, .2);
 }
 
 html {
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../public/marvel.webp') no-repeat center fixed;
+  background: linear-gradient(rgba(0,0,0, .8), rgba(0,0,0, .8)), url('../public/marvel.webp') no-repeat center fixed;
   background-size: cover;
   color: #fff;
 }

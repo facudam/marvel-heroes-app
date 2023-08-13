@@ -14,9 +14,9 @@
     letter-spacing: -2px;
 }
 
-.textShadowPopLeft {
-	-webkit-animation: text-shadow-pop-left 1s both;
-	        animation: text-shadow-pop-left 1s both;
+.textShadowPopBottom {
+	-webkit-animation: text-shadow-pop-bottom 0.6s both;
+	        animation: text-shadow-pop-bottom 0.6s both;
 }
 
 .header p {
@@ -24,31 +24,30 @@
     font-size: 1.1rem;
 }
 
-
-@-webkit-keyframes text-shadow-pop-left {
+@-webkit-keyframes text-shadow-pop-bottom {
     0% {
       text-shadow: 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel);
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
     100% {
-      text-shadow: -1px 0 var(--black-marvel), -2px 0 var(--black-marvel), -3px 0 var(--black-marvel), -4px 0 var(--black-marvel), -5px 0 var(--black-marvel), -6px 0 var(--black-marvel), -7px 0 var(--black-marvel), -8px 0 var(--black-marvel);
-      -webkit-transform: translateX(8px);
-              transform: translateX(8px);
+      text-shadow: 0 1px var(--black-marvel), 0 2px var(--black-marvel), 0 3px var(--black-marvel), 0 4px var(--black-marvel), 0 5px var(--black-marvel), 0 6px var(--black-marvel), 0 7px var(--black-marvel), 0 8px var(--black-marvel);
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
     }
-}
-@keyframes text-shadow-pop-left {
+  }
+  @keyframes text-shadow-pop-bottom {
     0% {
       text-shadow: 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel), 0 0 var(--black-marvel);
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
     100% {
-      text-shadow: -1px 0 var(--black-marvel), -2px 0 var(--black-marvel), -3px 0 var(--black-marvel), -4px 0 var(--black-marvel), -5px 0 var(--black-marvel), -6px 0 var(--black-marvel), -7px 0 var(--black-marvel), -8px 0 var(--black-marvel);
-      -webkit-transform: translateX(8px);
-              transform: translateX(8px);
+      text-shadow: 0 1px var(--black-marvel), 0 2px var(--black-marvel), 0 3px var(--black-marvel), 0 4px var(--black-marvel), 0 5px var(--black-marvel), 0 6px var(--black-marvel), 0 7px var(--black-marvel), 0 8px var(--black-marvel);
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
     }
-}
+  }
   
 @media screen and (min-width: 720px) {
     .header h1 {
