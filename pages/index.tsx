@@ -4,12 +4,11 @@ import { Header } from '@/components/ui'
 import styles from '@/styles/Home.module.css'
 import { CardHeroe } from '@/components/heroes'
 import { marvelApi } from '@/api'
-import { HeroesFullResponse } from '@/interfaces/heroes-full-data'
-import { HeroesList } from '../interfaces/heroes-full-data';
+import { HeroesFullResponse, Hero } from '@/interfaces'
 import { generatedHash, publicKey } from '@/api/keys'
 
 interface HomeProps {
-  heroes: HeroesList[]
+  heroes: Hero[]
 }
 
 const HomePage: NextPage<HomeProps> = ({ heroes }) => {
@@ -24,11 +23,11 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
           <section className={`${styles.home}`}>
             <Header />
             <main className={`${styles.main}`}>
-              {/* {
-                heroes.map(heroe => (
-                  <CardHeroe key={heroe.id} name={heroe.name} />
+              {
+                heroes.map(hero => (
+                  <CardHeroe hero={ hero } key={hero.id}/>
                 ))
-              } */}
+              }
             </main>
           </section>
         </>
@@ -41,7 +40,7 @@ export const getStaticProps: GetStaticProps = async() => {
 
   const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${ publicKey }&hash=${ generatedHash }`);
 
-  const heroes: HeroesList[] = data.data.results;
+  const heroes: Hero[] = data.data.results;
   return {
     props: { heroes }
   }
