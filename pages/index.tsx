@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import { MainLayout } from '@/components/layouts'
 import { Header } from '@/components/ui'
 import styles from '@/styles/Home.module.css'
-import { CardHeroe } from '@/components/heroes'
+import { HeroCard } from '@/components/heroes'
 import { marvelApi } from '@/api'
 import { HeroesFullResponse, Hero } from '@/interfaces'
 import { generatedHash, publicKey } from '@/api/keys'
@@ -25,7 +25,7 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
             <main className={`${styles.main}`}>
               {
                 heroes.map(hero => (
-                  <CardHeroe hero={ hero } key={hero.id}/>
+                  <HeroCard hero={ hero } key={hero.id}/>
                 ))
               }
             </main>

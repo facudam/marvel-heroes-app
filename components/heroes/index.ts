@@ -1,1 +1,1 @@
-export * from './CardHeroe'
+export * from './HeroCard'
