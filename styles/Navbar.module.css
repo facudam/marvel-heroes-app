@@ -8,6 +8,7 @@
     align-items: center;
     position: fixed;
     background-color: var(--black-marvel);
+    z-index: 9999;
 }
 
 .nav ul li {

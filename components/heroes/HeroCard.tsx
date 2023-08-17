@@ -9,10 +9,14 @@ interface HeroCardProps {
 import styles from "@/styles/HeroCard.module.css"
 
 export const HeroCard: FC<HeroCardProps> = ( { hero } ) => {
-    return(
+
+    const unavailableImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
+
+    if (hero.thumbnail.path !== unavailableImg) 
+      return(
         <div className={ styles.card }>
             <div className={ styles.imgCtn }>
-                <Image src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt={`${hero.name}: marvel heroe`} width={200} height={200}/>
+                <Image className={ styles.imgCtnImg } src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt={`${hero.name}: marvel heroe`} width={200} height={200}/>
             </div>
             <div className={ styles.titleCtn }>
                 <h2>{ hero.name }</h2>

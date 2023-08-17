@@ -25,7 +25,7 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
             <main className={`${styles.main}`}>
               {
                 heroes.map(hero => (
-                  <HeroCard hero={ hero } key={hero.id}/>
+                  <HeroCard hero={ hero } key={ hero.id }/>
                 ))
               }
             </main>
