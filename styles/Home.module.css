@@ -9,12 +9,10 @@
     gap: 35px;
 }
 
-/* solo como prueba: */
 .main {
     width: 100%;
     max-width: 603px;
     background-color: var(--black-marvel);
-    background-color: rgb(32, 32, 32);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
