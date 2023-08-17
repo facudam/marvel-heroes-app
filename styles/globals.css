@@ -7,6 +7,7 @@
 :root {
   --max-width: 1180px;
   --black-marvel: rgba(0, 0, 0, .2);
+  --red-marvel: rgb(236,29,36);
 }
 
 html {

@@ -47,7 +47,7 @@
 }
 
 .linkPrincipal:hover {
-    color: rgb(236,29,36);
+    color: var(--red-marvel);
 }
 
 .linkSecondary {
