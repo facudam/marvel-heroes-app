@@ -62,7 +62,7 @@
 /* Hover animations: */
 
 .card:hover .imgCtnImg {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .card:hover .titleCtn::before {
