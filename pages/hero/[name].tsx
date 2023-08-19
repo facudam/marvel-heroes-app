@@ -9,7 +9,7 @@ interface CharacterPageProps{
     hero: Hero
 }
 
-const HeroPageById: NextPage<CharacterPageProps> = ({ hero }) => {
+const HeroPageByName: NextPage<CharacterPageProps> = ({ hero }) => {
 
     console.log(hero)
 
@@ -25,22 +25,23 @@ const HeroPageById: NextPage<CharacterPageProps> = ({ hero }) => {
 export const getStaticPaths: GetStaticPaths = async() => {
     const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
 
-    const heroes: string[] = data.data.results.map(hero => hero.id.toString())
+    const heroes: string[] = data.data.results.map(hero => hero.name)
     return {
-        paths: heroes.map(id => ({
-            params: { id }
+        paths: heroes.map(name => ({
+            params: { name }
         })),
         fallback: false
     }
 }
 
 export const getStaticProps: GetStaticProps = async({ params }) => {
-    const { id } = params as { id: string }
-    const { data } = await marvelApi.get<HeroesFullResponse>(`characters/${id}?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
-    let hero = data.data.results[0]
+    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
+
+    //We get only the current path hero information, and we pass it to props.
+    let hero = data.data.results.find((hero) => hero.name == params?.name)
     return {
       props: { hero }
     }
   }
 
-export default HeroPageById;
+export default HeroPageByName;
