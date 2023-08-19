@@ -11,7 +11,7 @@ export const Navbar: FC = () => {
                     <Link className={`${styles.link} ${styles.linkPrincipal}`} href=''>listas</Link>
                 </li>
                 <li>
-                    <Link className={`${styles.link} ${styles.logo}`} href=''>marvel heroes app</Link>
+                    <Link className={`${styles.link} ${styles.logo}`} href='/'>marvel heroes app</Link>
                 </li>
                 <li>
                     <Link className={`${styles.link} ${styles.linkPrincipal}`} href=''>Favourites</Link>
@@ -25,7 +25,7 @@ export const Navbar: FC = () => {
                     <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>characters</Link>
                 </li>
                 <li>
-                    <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>more</Link>
+                    <Link className={`${styles.link} ${styles.linkSecondary}`} href=''>creators</Link>
                 </li>
             </ul>
         </nav>

@@ -19,18 +19,18 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
         title='The non-official marvel heroes application' 
         author='Facundo Cáceres' 
         description="The Marvel heroes app: get all your heroes info of marvel's universe">
-        <>
+        <div className={`${styles.center}`}>
           <section className={`${styles.home}`}>
             <Header />
             <main className={`${styles.main}`}>
               {
-                heroes.map(hero => (
-                  <HeroCard hero={ hero } key={ hero.id }/>
+                heroes.map((hero, index) => (
+                  <HeroCard hero={ hero } index={ index } key={ hero.id }/>
                 ))
               }
             </main>
           </section>
-        </>
+        </div>
       </MainLayout>
     </>
   )
@@ -38,7 +38,7 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
 
 export const getStaticProps: GetStaticProps = async() => {
 
-  const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${ publicKey }&hash=${ generatedHash }`);
+  const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
 
   const heroes: Hero[] = data.data.results;
   return {

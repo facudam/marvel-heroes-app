@@ -47,7 +47,8 @@
     right: -5px;
     bottom: -5px;
     transform: rotate(45deg);
-    background-color: rgb(18,14,10);
+    background-color: rgb(21, 15, 10);
+    background-color: rgb(34, 34, 34);
 }
 
 .titleCtn h2 {
@@ -67,6 +68,10 @@
 
 .card:hover .titleCtn::before {
     height: 100%;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 @media screen and (min-width: 720px) {

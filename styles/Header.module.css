@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    margin-top: 110px;
 }
 
 .header h1 {
@@ -62,5 +63,6 @@
 @media screen and (min-width: 1360px) {
   .header {
     text-align: left;
+    margin-top: 0;
   }
 }
