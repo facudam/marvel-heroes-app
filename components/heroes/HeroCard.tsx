@@ -8,14 +8,16 @@ interface HeroCardProps {
 }
 
 import styles from "@/styles/HeroCard.module.css"
+import { useRouter } from "next/router";
 
 export const HeroCard: FC<HeroCardProps> = ( { hero, index } ) => {
-
+    const router = useRouter()
     const unavailableImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
 
     if (hero.thumbnail.path !== unavailableImg) 
       return(
-        <div className={(index !== 100) ? `${styles.card}` : `${styles.hidden}`}>
+        <div onClick={() => router.push(`/hero/${ hero.id }`) }
+            className={(index !== 100) ? `${styles.card}` : `${styles.hidden}`}>
             <div className={ styles.imgCtn }>
                 <Image className={ styles.imgCtnImg } src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt={`${hero.name}: marvel heroe`} width={200} height={200}/>
             </div>

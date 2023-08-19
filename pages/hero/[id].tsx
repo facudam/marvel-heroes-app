@@ -3,16 +3,20 @@ import { generatedHash, publicKey } from "@/api/keys"
 import { MainLayout } from "@/components/layouts"
 import { Hero, HeroesFullResponse } from "@/interfaces"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import styles from '@/styles/HeroPageById.module.css'
 
 interface CharacterPageProps{
     hero: Hero
 }
 
-const HeroPageByName: NextPage<CharacterPageProps> = ({ hero }) => {
+const HeroPageById: NextPage<CharacterPageProps> = ({ hero }) => {
+
+    console.log(hero)
+
     return(
         <MainLayout title={`${hero.name}: the super Marvel Hero`} description={`Get all the info you want to know about ${hero.name}`} author="Facundo Cáceres">
             <>
-                <h1>{hero.name}</h1>
+                <h1 className={styles.title}>{hero.name}</h1>
             </>
         </MainLayout>
     )
@@ -21,37 +25,22 @@ const HeroPageByName: NextPage<CharacterPageProps> = ({ hero }) => {
 export const getStaticPaths: GetStaticPaths = async() => {
     const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
 
-    const heroes: string[] = data.data.results.map(hero => hero.name)
-
+    const heroes: string[] = data.data.results.map(hero => hero.id.toString())
     return {
-        paths: heroes.map(name => ({
-            params: { name }
+        paths: heroes.map(id => ({
+            params: { id }
         })),
         fallback: false
     }
 }
 
 export const getStaticProps: GetStaticProps = async({ params }) => {
-
-    console.log(params)
-    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
-  
-    // const nombre = params?.name
-
-    // const getCurrentHeroInfo = () => {
-    //     data.data.results.map(hero => {
-    //         if (hero.name == nombre) {
-    //             return hero
-    //         }
-    //     })
-    // }
-
-    // const hero = getCurrentHeroInfo()
-    // console.log(hero)
-
+    const { id } = params as { id: string }
+    const { data } = await marvelApi.get<HeroesFullResponse>(`characters/${id}?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
+    let hero = data.data.results[0]
     return {
-      props: { data }
+      props: { hero }
     }
   }
 
-export default HeroPageByName;
+export default HeroPageById;
