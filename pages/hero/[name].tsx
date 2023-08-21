@@ -1,5 +1,5 @@
 import { marvelApi } from "@/api"
-import { generatedHash, publicKey } from "@/api/keys"
+import { generatedHash, publicKey,limit, ts  } from "@/api/keys"
 import { MainLayout } from "@/components/layouts"
 import { Hero, HeroesFullResponse } from "@/interfaces"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
@@ -34,7 +34,7 @@ const HeroPageByName: NextPage<CharacterPageProps> = ({ hero }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async() => {
-    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
+    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?orderBy=-modified&limit=${limit}&ts=${ts}&apikey=${publicKey}&hash=${generatedHash}`);
 
     const heroes: string[] = data.data.results.map(hero => hero.name)
     return {
@@ -46,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async() => {
 }
 
 export const getStaticProps: GetStaticProps = async({ params }) => {
-    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
+    const { data } = await marvelApi.get<HeroesFullResponse>(`characters?orderBy=-modified&limit=${limit}&ts=${ts}&apikey=${publicKey}&hash=${generatedHash}`);
 
     //We get only the current hero path information, and we pass it to props.
     let hero = data.data.results.find((hero) => hero.name == params?.name)

@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 import { HeroCard } from '@/components/heroes'
 import { marvelApi } from '@/api'
 import { HeroesFullResponse, Hero } from '@/interfaces'
-import { generatedHash, publicKey } from '@/api/keys'
+import { generatedHash, publicKey, limit, ts } from '@/api/keys'
 
 interface HomeProps {
   heroes: Hero[]
@@ -38,7 +38,7 @@ const HomePage: NextPage<HomeProps> = ({ heroes }) => {
 
 export const getStaticProps: GetStaticProps = async() => {
 
-  const { data } = await marvelApi.get<HeroesFullResponse>(`characters?ts=1&apikey=${publicKey}&hash=${generatedHash}`);
+  const { data } = await marvelApi.get<HeroesFullResponse>(`characters?orderBy=-modified&limit=${limit}&ts=${ts}&apikey=${publicKey}&hash=${generatedHash}`);
 
   const heroes: Hero[] = data.data.results;
   return {
