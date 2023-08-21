@@ -1,0 +1,16 @@
+.heroCard {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.heroCard h1 {
+    padding: 10px;
+}
+
+.heroCard img {
+    width: 100%;
+    height: auto;
+}
