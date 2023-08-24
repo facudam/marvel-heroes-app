@@ -1,9 +1,9 @@
 .heroCard {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     display: flex;
-    flex-direction: column;
     gap: 5px;
+    background-color: rgb(141, 139, 139);
 }
 
 .heroCard h1 {
@@ -11,6 +11,6 @@
 }
 
 .heroCard img {
-    width: 100%;
+    width: auto;
     height: auto;
 }

@@ -40,7 +40,9 @@ export const getStaticProps: GetStaticProps = async() => {
 
   const { data } = await marvelApi.get<HeroesFullResponse>(`characters?orderBy=-modified&limit=${limit}&ts=${ts}&apikey=${publicKey}&hash=${generatedHash}`);
 
-  const heroes: Hero[] = data.data.results;
+  const unavailableImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
+  // We filter those heroes without a description and a picture. 
+  const heroes: Hero[] = data.data.results.filter(hero => hero.description !== '' && hero.thumbnail.path !== unavailableImg);
   return {
     props: { heroes }
   }

@@ -12,12 +12,11 @@ interface HeroPageCardProps {
 export const HeroPageCard: FC<HeroPageCardProps> = ({ path, extension, name, description }) => {
     return(
         <div className={styles.heroCard}>
-            <h1>{name}</h1>
-            {
-                (description !== '') &&
-                    <p>{description}</p>
-            }
-            <Image src={`${path}.${extension}`} alt={`${name}` } width={500} height={500} />
+            <Image src={`${path}/portrait_incredible.${extension}`} alt={`${name}` } width={500} height={500} />
+            <div>
+                <h1>{name}</h1>   
+                <p>{description}</p>
+            </div>
         </div>
     )
 }
