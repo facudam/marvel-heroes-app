@@ -14,7 +14,7 @@ export const HeroCard: FC<HeroCardProps> = ( { hero, index } ) => {
     const router = useRouter()
       return(
         <div onClick={() => router.push(`/hero/${ hero.name }`) }
-            className={(index !== 100) ? `${styles.card}` : `${styles.hidden}`}>
+            className={`${styles.card}`}>
             <div className={ styles.imgCtn }>
                 <Image className={ styles.imgCtnImg } src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt={`${hero.name}: marvel heroe`} width={200} height={200}/>
             </div>

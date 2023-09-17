@@ -1,6 +1,7 @@
 .card {
     width: 100%;
     max-width: 96px;
+    max-height: 158px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -68,11 +69,7 @@
 }
 
 .card:hover .titleCtn::before {
-    height: 100%;
-}
-
-.hidden {
-    visibility: hidden;
+    height: 55px;
 }
 
 @media screen and (min-width: 720px) {
