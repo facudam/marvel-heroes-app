@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    max-width: 800px;
+    max-width: 750px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -27,6 +27,47 @@
     font-family: roboto, sansSerif;
     font-size: 1.1rem;
 }
+.btnContainer {
+  margin-top: 20px;
+}
+/* Button styles  */
+.button {
+  padding: 0.8em 1.8em;
+  border: 2px solid var(--red-marvel);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--red-marvel);
+ }
+ 
+ .button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--red-marvel);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .button:hover::before {
+  width: 105%;
+ }
+ 
+ .button:hover {
+  color: #111;
+ }
+ 
 
 @-webkit-keyframes text-shadow-pop-bottom {
     0% {
@@ -58,7 +99,7 @@
         font-size: 5rem;
     }
     .header p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -66,5 +107,8 @@
   .header {
     text-align: left;
     margin-top: 210px;
+  }
+  .button {
+    font-size: 1.2rem;
   }
 }
