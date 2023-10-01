@@ -6,13 +6,16 @@ import { HeroCard } from '@/components/heroes'
 import { marvelApi } from '@/api'
 import { HeroesFullResponse, Hero } from '@/interfaces'
 import { generatedHash, publicKey, limit, ts } from '@/api/keys'
+import type { RootState } from '../store'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { decrement, increment } from '../slices/counterSlice'
 
 interface HomeProps {
   heroes: Hero[]
 }
 
 const HomePage: NextPage<HomeProps> = ({ heroes }) => {
-  console.log(heroes)
+  // const count = useSelector((state: RootState) => state.counter.value)
   return (
     <>
       <MainLayout 
